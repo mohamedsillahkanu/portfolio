@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Mohamed Sillah Kanu - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
@@ -174,14 +174,11 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
             border: 4px solid white;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             margin-bottom: 1rem;
             background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #888;
             transition: transform 0.5s ease;
             position: relative;
@@ -190,6 +187,13 @@
         
         .profile-pic:hover {
             transform: scale(1.05);
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .profile-pic-glow {
@@ -351,6 +355,9 @@
             z-index: 2;
             opacity: 0;
             transition: all 0.3s ease;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 80%;
         }
         
         .project-link-btn {
@@ -743,10 +750,8 @@
     <header>
         <div class="header-bg"></div>
         <div class="container">
-            <!-- EDIT: Replace with your name -->
             <h1 class="animate__animated animate__fadeInDown">Mohamed Sillah Kanu</h1>
-            <!-- EDIT: Replace with your title/roles -->
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">Mathematician | Statistician | Software Engineer| Data Scientist |</p>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Mathematician | Statistician | Software Engineer | Data Scientist</p>
         </div>
     </header>
     
@@ -756,41 +761,28 @@
                 <div class="profile-pic-container">
                     <div class="profile-pic-glow"></div>
                     <div class="profile-pic">
-                        <!-- REPLACE WITH YOUR PROFILE PICTURE -->
-                        <!-- Option 1: Use an image from the web -->
-                        <img src="https://github.com/mohamedsillahkanu/portfolio/raw/393780f6f2023d2a73398560870050fe671f40e4/Mohamed%20profile%20pic.png" alt="Profile pic">
-                        
-                        <!-- Option 2: Use an image from your repository -->
-                      
-                        
-                        <!-- Delete the placeholder after adding your image -->
+                        <img src="https://github.com/mohamedsillahkanu/portfolio/raw/393780f6f2023d2a73398560870050fe671f40e4/Mohamed%20profile%20pic.png" alt="Mohamed Sillah Kanu">
                     </div>
                 </div>
                 <div class="profile-content">
                     <h2>About Me</h2>
-                    <!-- EDIT: Replace with your own bio -->
                     <p>Hello! I'm a passionate developer with expertise in building web applications and solving complex problems. With a strong foundation in both frontend and backend technologies, I love creating intuitive and efficient solutions.</p>
                     <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.</p>
                     
                     <div class="social-links">
-                        <!-- EDIT: Add your GitHub profile URL -->
-                        <a href="https://github.com/yourusername" class="animate__animated animate__bounceIn animate__delay-1s">
+                        <a href="https://github.com/mohamedsillahkanu" class="animate__animated animate__bounceIn animate__delay-1s">
                             <i class="fab fa-github"></i>
                         </a>
-                        <!-- EDIT: Add your LinkedIn profile URL -->
-                        <a href="https://linkedin.com/in/yourusername" class="animate__animated animate__bounceIn animate__delay-2s">
+                        <a href="https://linkedin.com/in/mohamed-kanu" class="animate__animated animate__bounceIn animate__delay-2s">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <!-- EDIT: Add your Twitter profile URL or remove if not needed -->
-                        <a href="https://twitter.com/yourusername" class="animate__animated animate__bounceIn animate__delay-3s">
+                        <a href="https://twitter.com/mohamedsillahk1" class="animate__animated animate__bounceIn animate__delay-3s">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <!-- EDIT: Add your CodePen profile URL or remove if not needed -->
-                        <a href="https://codepen.io/yourusername" class="animate__animated animate__bounceIn animate__delay-4s">
+                        <a href="https://codepen.io/mohamedsillahkanu" class="animate__animated animate__bounceIn animate__delay-4s">
                             <i class="fab fa-codepen"></i>
                         </a>
-                        <!-- EDIT: Add your email with mailto: link -->
-                        <a href="mailto:your.sillahmohamedkanu@gmail.com" class="animate__animated animate__bounceIn animate__delay-5s">
+                        <a href="mailto:sillahmohamedkanu@gmail.com" class="animate__animated animate__bounceIn animate__delay-5s">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -798,7 +790,6 @@
                     <div class="skills-container">
                         <h3>My Skills</h3>
                         <div class="skills-list">
-                            <!-- EDIT: Customize this list with your own skills -->
                             <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
                             <div class="skill-item"><i class="fab fa-react"></i> React</div>
                             <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
@@ -807,7 +798,9 @@
                             <div class="skill-item"><i class="fab fa-sass"></i> CSS/SCSS</div>
                             <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
                             <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
-                            <!-- Add more skills as needed following the same format -->
+                            <div class="skill-item"><i class="fas fa-square-root-alt"></i> Mathematics</div>
+                            <div class="skill-item"><i class="fas fa-chart-line"></i> Statistics</div>
+                            <div class="skill-item"><i class="fas fa-brain"></i> Machine Learning</div>
                         </div>
                     </div>
                 </div>
@@ -824,12 +817,14 @@
             <p>Here are some of my recent projects. Each one represents a unique challenge and learning experience.</p>
             
             <div class="project-grid">
+                <!-- PROJECT 1 -->
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
                         <i class="fas fa-laptop-code fa-3x"></i>
                         <div class="project-links">
-                            <a href="#" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
-                            <a href="#" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
+                            <a href="https://mohamedsillahkanu.github.io/project1" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
+                            <a href="https://github.com/mohamedsillahkanu/project1" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
+                            <a href="https://github.com/mohamedsillahkanu/project1/blob/main/README.md" class="project-link-btn"><i class="fas fa-file-alt"></i> Doc</a>
                         </div>
                     </div>
                     <div class="project-content">
@@ -840,31 +835,62 @@
                             <span class="tag"><i class="fas fa-server"></i> Express</span>
                             <span class="tag"><i class="fas fa-database"></i> SQL</span>
                         </div>
+                        <div class="project-docs" style="margin-top: 1rem;">
+                            <a href="https://github.com/mohamedsillahkanu/project1/blob/main/DOCUMENTATION.md" style="color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-book"></i> Full Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PROJECT 2 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-img">
+                        <i class="fas fa-mobile-alt fa-3x"></i>
+                        <div class="project-links">
+                            <a href="https://mohamedsillahkanu.github.io/project2" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
+                            <a href="https://github.com/mohamedsillahkanu/project2" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
+                            <a href="https://github.com/mohamedsillahkanu/project2/blob/main/README.md" class="project-link-btn"><i class="fas fa-file-alt"></i> Doc</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Project Name 2</h3>
+                        <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
+                        <div>
+                            <span class="tag"><i class="fab fa-react"></i> React</span>
+                            <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="tag"><i class="fas fa-database"></i> MongoDB</span>
+                        </div>
+                        <div class="project-docs" style="margin-top: 1rem;">
+                            <a href="https://github.com/mohamedsillahkanu/project2/tree/main/docs" style="color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-folder-open"></i> Project Documentation
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- PROJECT 3 -->
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <!-- EDIT: Replace with your project screenshot -->
                         <i class="fas fa-chart-bar fa-3x"></i>
                         <div class="project-links">
-                            <!-- EDIT: Add your project demo URL -->
-                            <a href="https://yourproject3.com" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
-                            <!-- EDIT: Add your project repository URL -->
-                            <a href="https://github.com/yourusername/project3" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
+                            <a href="https://mohamedsillahkanu.github.io/project3" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
+                            <a href="https://github.com/mohamedsillahkanu/project3" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
+                            <a href="https://github.com/mohamedsillahkanu/project3/blob/main/README.md" class="project-link-btn"><i class="fas fa-file-alt"></i> Doc</a>
                         </div>
                     </div>
                     <div class="project-content">
-                        <!-- EDIT: Your project name -->
                         <h3>Project Name 3</h3>
-                        <!-- EDIT: Your project description -->
                         <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
                         <div>
-                            <!-- EDIT: Technologies used in your project -->
                             <span class="tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tag"><i class="fab fa-django"></i> Django</span>
                             <span class="tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                        </div>
+                        <div class="project-docs" style="margin-top: 1rem;">
+                            <a href="https://github.com/mohamedsillahkanu/project3/blob/main/DOCUMENTATION.md" style="color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-book"></i> Full Documentation
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -885,12 +911,9 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <!-- EDIT: Your job period -->
                         <span class="timeline-period">January 2021 - Present</span>
-                        <!-- EDIT: Your job title and company -->
                         <h3>Senior Developer - Company Name</h3>
                         <ul>
-                            <!-- EDIT: Your responsibilities and achievements -->
                             <li>Led the development of a major product feature that increased user engagement by 30%.</li>
                             <li>Mentored junior developers and conducted code reviews to ensure code quality and best practices.</li>
                             <li>Collaborated with design and product teams to implement responsive and accessible UI components.</li>
@@ -903,12 +926,9 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <!-- EDIT: Your job period -->
                         <span class="timeline-period">June 2018 - December 2020</span>
-                        <!-- EDIT: Your job title and company -->
                         <h3>Web Developer - Previous Company</h3>
                         <ul>
-                            <!-- EDIT: Your responsibilities and achievements -->
                             <li>Developed and maintained client websites using JavaScript, HTML, and CSS.</li>
                             <li>Implemented RESTful APIs and integrated third-party services.</li>
                             <li>Optimized application performance and fixed bugs to improve user experience.</li>
@@ -932,13 +952,9 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="timeline-content">
-                        <!-- EDIT: Your education period -->
                         <span class="timeline-period">2014 - 2018</span>
-                        <!-- EDIT: Your degree -->
                         <h3>Bachelor of Science in Computer Science</h3>
-                        <!-- EDIT: Your university/school -->
                         <p>University Name</p>
-                        <!-- EDIT: Your relevant coursework -->
                         <p>Relevant coursework: Data Structures, Algorithms, Database Systems, Web Development</p>
                     </div>
                 </div>
@@ -982,8 +998,7 @@
     <footer>
         <div class="footer-wave"></div>
         <div class="container">
-            <!-- EDIT: Update with your name and current year -->
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Mohamed Sillah Kanu. All rights reserved.</p>
         </div>
     </footer>
     
@@ -1040,22 +1055,3 @@
     </script>
 </body>
 </html>
-                        <div>
-                            <span class="tag"><i class="fab fa-react"></i> React</span>
-                            <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
-                            <span class="tag"><i class="fas fa-database"></i> MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img">
-                        <i class="fas fa-mobile-alt fa-3x"></i>
-                        <div class="project-links">
-                            <a href="#" class="project-link-btn"><i class="fas fa-eye"></i> View</a>
-                            <a href="#" class="project-link-btn"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name 2</h3>
-                        <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
