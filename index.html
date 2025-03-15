@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <style>
+        :root {
+            --primary: #0366d6;
+            --dark: #24292e;
+            --light: #f6f8fa;
+            --text: #24292e;
+            --secondary: #6a737d;
+            --border: #e1e4e8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-item {
+            background-color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        input, textarea, button {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+                text-align: left;
+                gap: 2rem;
+            }
+            
+            .profile-content {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Software Developer | Problem Solver | Tech Enthusiast</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <div class="profile">
+                <div class="profile-pic">Profile Picture</div>
+                <div class="profile-content">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm a passionate developer with expertise in building web applications and solving complex problems. With a strong foundation in both frontend and backend technologies, I love creating intuitive and efficient solutions.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="#" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                            Twitter
+                        </a>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">CSS/SCSS</span>
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of my recent projects. Each one represents a unique challenge and learning experience.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">Project Screenshot</div>
+                    <div class="project-content">
+                        <h3>Project Name 1</h3>
+                        <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
+                        <div>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" target="_blank" style="color: var(--primary);">View Project</a> |
+                            <a href="#" target="_blank" style="color: var(--primary);">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Screenshot</div>
+                    <div class="project-content">
+                        <h3>Project Name 2</h3>
+                        <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
+                        <div>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" target="_blank" style="color: var(--primary);">View Project</a> |
+                            <a href="#" target="_blank" style="color: var(--primary);">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Screenshot</div>
+                    <div class="project-content">
+                        <h3>Project Name 3</h3>
+                        <p>A brief description of the project, what technologies were used, and what problems it solves. Keep it concise but informative.</p>
+                        <div>
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" target="_blank" style="color: var(--primary);">View Project</a> |
+                            <a href="#" target="_blank" style="color: var(--primary);">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3>Senior Developer - Company Name</h3>
+                <p style="color: var(--secondary);">January 2021 - Present</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Led the development of a major product feature that increased user engagement by 30%.</li>
+                    <li>Mentored junior developers and conducted code reviews to ensure code quality and best practices.</li>
+                    <li>Collaborated with design and product teams to implement responsive and accessible UI components.</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>Web Developer - Previous Company</h3>
+                <p style="color: var(--secondary);">June 2018 - December 2020</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Developed and maintained client websites using JavaScript, HTML, and CSS.</li>
+                    <li>Implemented RESTful APIs and integrated third-party services.</li>
+                    <li>Optimized application performance and fixed bugs to improve user experience.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div>
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>University Name, Graduated 2018</p>
+                <p style="margin-top: 0.5rem;">Relevant coursework: Data Structures, Algorithms, Database Systems, Web Development</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out if you have any questions or would like to collaborate on a project.</p>
+            
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
