@@ -1,0 +1,462 @@
+<h1 id="step-by-step-guide-for-running-a-basic-simulation-script-to-analyze-climate-and-vector-mosquito-dynamics-aimed-at-understanding-how-environmental-factors-and-vector-behavior-impact-malaria-transmission">Step-by-step guide for running a basic simulation script to analyze climate and vector (mosquito) dynamics, aimed at understanding how environmental factors and vector behavior impact malaria transmission.</h1>
+<h3 id="step-1-open-mobaxterm-on-your-computer-select-start-local-terminal-or-use-the-ssh-option-and-log-in-to-quest-using-your-credentials">Step 1: Open MobaXterm on your computer, select &#39;Start Local Terminal&#39; or use the SSH option, and log in to Quest using your credentials.&quot;</h3>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/Login.png" alt="Login"></p>
+<ul>
+<li><strong>Note: MobaXterm is typically used to work on remote servers (e.g., through SSH)</strong><ul>
+<li><strong>SSH (Secure Shell) is a network protocol that allows you to securely connect to a remote computer or server over a secured network. It is widely used by system administrators, developers, and IT professionals to manage remote systems, transfer files, and execute commands.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="step-2-screen-that-appears-after-you-successfully-log-in">Step 2: Screen that appears after you successfully log in.</h3>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/After%20login.png" alt="Aftter_Login"></p>
+<h3 id="step-3-load-the-python-module-in-the-terminal-as-it-is-already-pre-installed">Step 3: Load the Python module in the terminal as it is already pre-installed.</h3>
+<pre><code class="language-python">module load python/3.8.4
+</code></pre>
+<ul>
+<li>Note: idmtools require python 3.7 or higher</li>
+</ul>
+<h3 id="step-4-create-and-activate-a-virtual-python-environment"><strong>Step 4: Create and Activate a Virtual Python Environment</strong></h3>
+<ol>
+<li><strong>Create the Virtual Environment</strong>:
+Run the following command to create a virtual environment named <code>test</code>:<pre><code class="language-python">python -m venv test
+</code></pre>
+</li>
+<li><strong>Activate the Virtual Environment</strong>:
+Activate the virtual environment using the following command:<pre><code class="language-python">source /home/wko2809/test/bin/activate
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>Note: <strong>test</strong> is the name of the virtual environment used in this example.</li>
+<li><strong>/home/wko2809/test/</strong> is the file path where the virtual environment is located.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/virtula%20environment.png" alt="virtual_exp"></p>
+<h3 id="step-5-install-emodpy-malaria">Step 5: Install emodpy-malaria</h3>
+<pre><code class="language-python">pip install emodpy-malaria --ignore-installed --index-url=https://packages.idmod.org/api/pypi/pypi-production/simple
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/emodpy-malaria.png" alt="emodpy_malaria">
+<img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/emodpy2.png" alt="emodpy2"></p>
+<h3 id="step-6-install-idmtools_platform_slurm">Step 6: Install idmtools_platform_slurm</h3>
+<pre><code class="language-python"> pip install idmtools_platform_slurm --ignore-installed --index-url=https://packages.idmod.org/api/pypi/pypi-production/simple
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/idmtools1.png" alt="idmtools1">
+<img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/idmtools2.png" alt="idmtools2"></p>
+<h3 id="step-7-update-the-bashrc-file-to-automatically-activate-the-virtual-environment-by-adding-the-following-command">Step 7: Update the .bashrc file to automatically activate the virtual environment by adding the following command:</h3>
+<pre><code class="language-python">alias load_emodpy=&#39;source /home/wko2809/test/bin/activate&#39;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/bashrc.png" alt="bashrc"></p>
+<h3 id="step-8-create-a-directory-in-the-projects-folder"><strong>Step 8: Create a Directory in the Projects Folder</strong></h3>
+<p>Run the following commands to navigate to the <code>/projects/b1139/</code> folder and create a directory named <code>FE_test</code>:</p>
+<pre><code class="language-python">cd /projects/b1139/
+mkdir FE_test
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/mkdir2.png" alt="mkdir"></p>
+<h3 id="step-9-clone-the-fe-2023-examples-repository-into-the-fe_test-folder"><strong>Step 9: Clone the <code>FE-2023-examples</code> Repository into the <code>FE_test</code> Folder</strong></h3>
+<p>Clone the repository:</p>
+<pre><code class="language-python">git clone https://github.com/mohamedsillahkanu/FE-2023-examples.git
+</code></pre>
+<p><strong>Or you clone this</strong>                           </p>
+<pre><code class="language-python">git clone https://github.com/numalariamodeling/FE-2023-examples.git
+</code></pre>
+<p><strong>Note:</strong> Ensure you are in the <code>FE_test</code> folder before cloning the repository.</p>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/gitclone.png" alt="gitclone"></p>
+<h3 id="step-10-run-a-simple-simulation-using-the-run_examplepy-file"><strong>Step 10: Run a simple simulation using the <code>run_example.py</code> file</strong></h3>
+<p>To execute the simulation, run the following command:</p>
+<pre><code class="language-python">cd FE-2023-examples/
+</code></pre>
+<pre><code class="language-python">python3 run_example.py
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/run_example.png" alt="gitclone"></p>
+<h3 id="step-11-step-by-step-explanation-of-the-output"><strong>Step 11: Step-by-Step Explanation of the Output</strong></h3>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/sim_output.png" alt="sim_output"></p>
+<h4 id="111-initialization-of-slurmplatform"><strong>11.1. Initialization of SlurmPlatform</strong></h4>
+<pre><code class="language-plaintext">Initializing SlurmPlatform with:
+{
+   &quot;mode&quot;: &quot;local&quot;,
+   &quot;job_directory&quot;: &quot;/projects/b1139/FE_wko2809/FE-2023-examples/experiments&quot;,
+   &quot;time&quot;: &quot;2:00:00&quot;,
+   &quot;max_running_jobs&quot;: 10,
+   &quot;modules&quot;: [
+      &quot;singularity&quot;
+   ],
+   &quot;partition&quot;: &quot;b1139testnode&quot;,
+   &quot;account&quot;: &quot;b1139&quot;
+}
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The <strong>SlurmPlatform</strong> is initialized to manage the simulations.</li>
+<li>Configuration:<ul>
+<li><strong>Mode</strong>: <code>local</code> – The simulations will run on one specific compute node within the HPC system.</li>
+<li><strong>Job Directory</strong>: <code>/projects/b1139/FE_wko2809/FE-2023-examples/experiments</code> – The output files will be stored here.</li>
+<li><strong>Time</strong>: <code>2:00:00</code> – The maximum runtime for jobs is 2 hours.</li>
+<li><strong>Max Running Jobs</strong>: <code>10</code> – Allows up to 10 jobs to run at the same time.</li>
+<li><strong>Modules</strong>: Includes <code>singularity</code>, the container runtime.</li>
+<li><strong>Partition</strong>: <code>b1139testnode</code>, a specific Slurm partition (node group).</li>
+<li><strong>Account</strong>: <code>b1139</code>, your account for Slurm resource allocation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="112-creation-of-emodtask"><strong>11.2. Creation of EMODTask</strong></h4>
+<pre><code class="language-plaintext">Creating EMODTask (from files)...
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>An <strong>EMODTask</strong> is being created. This task includes:<ul>
+<li>Simulation configuration.</li>
+<li>Input files</li>
+<li>Experiment parameters.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="113-generating-the-demographics-file"><strong>11.3. Generating the Demographics File</strong></h4>
+<pre><code class="language-plaintext">Generating demographics file demographics.json.
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>A demographics file (<code>demographics.json</code>) is created. This file contains demographic data needed for the simulation.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="114-discovering-experiment-assets"><strong>11.4. Discovering Experiment Assets</strong></h4>
+<pre><code class="language-plaintext">Discovering experiment assets from tasks: 100%|████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00, 3315.66simulation/s]
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The system scans and links required input files for the experiment.</li>
+<li>In this case, 1 task was successfully discovered and validated.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="115-commissioning-simulations"><strong>11.5. Commissioning Simulations</strong></h4>
+<pre><code class="language-plaintext">Commissioning Simulations: 100%|█████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00,  5.76simulation/s]
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The simulation is sent to the Slurm scheduler for execution.</li>
+<li>1 simulation was commissioned successfully.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="116-job-directory-suite-and-experiment-details"><strong>11.6. Job Directory, Suite, and Experiment Details</strong></h4>
+<pre><code class="language-plaintext">job_directory: /projects/b1139/FE_wko2809/FE-2023-examples/experiments
+suite: db030038-a91f-4618-851f-068af94be557
+experiment: 784f07a9-de53-43e7-a175-a99ccd18dec0
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li><strong>Job Directory</strong>: Location where outputs, logs, and results are stored.</li>
+<li><strong>Suite ID</strong>: <code>db030038-a91f-4618-851f-068af94be557</code> – Identifies the collection of related experiments.</li>
+<li><strong>Experiment ID</strong>: <code>784f07a9-de53-43e7-a175-a99ccd18dec0</code> – Identifies the specific experiment.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="117-experiment-directory"><strong>11.7. Experiment Directory</strong></h4>
+<pre><code class="language-plaintext">Experiment Directory:
+/projects/b1139/FE_wko2809/FE-2023-examples/experiments/Suite_db030038-a91f-4618-851f-068af94be557/wko2809_FE_example_basic_784f07a9-de53-43e7-a175-a99ccd18dec0
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The full path to the directory containing outputs for this specific experiment.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="118-slurm-job-id"><strong>11.8. Slurm Job ID</strong></h4>
+<pre><code class="language-plaintext">Slurm Job Ids (1):
+   2263860
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The job is submitted to Slurm and assigned a Job ID (<code>2263860</code>).</li>
+<li>This ID can be used to monitor the job’s status.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="119-command-to-check-job-status"><strong>11.9. Command to Check Job Status</strong></h4>
+<pre><code class="language-plaintext">You may try the following command to check simulations running status:
+  idmtools slurm /projects/b1139/FE_wko2809/FE-2023-examples/experiments status --exp-id 784f07a9-de53-43e7-a175-a99ccd18dec0
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>You are given a command to monitor the status of the experiment using IDMTools.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="1110-simulation-progress"><strong>11.10. Simulation Progress</strong></h4>
+<pre><code class="language-plaintext">Waiting on Experiment wko2809_FE_example_basic to Finish running: 100%|██████████████████████████████████████| 1/1 [01:00&lt;00:00, 60.51s/simulation]
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The simulation is running, and the progress bar shows completion.</li>
+<li>The simulation took approximately 1 minute (<code>60.51 seconds</code>) to run.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="1111-experiment-success"><strong>11.11. Experiment Success</strong></h4>
+<pre><code class="language-plaintext">Experiment 784f07a9-de53-43e7-a175-a99ccd18dec0 succeeded.
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The simulation completed successfully without errors.</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-12-update-the-experiment-id-in-analyzer_w1py"><strong>Step 12: Update the Experiment ID in <code>analyzer_W1.py</code></strong></h3>
+<h4 id="121-copy-the-experiment-id"><strong>12.1 Copy the Experiment ID</strong>:</h4>
+<ul>
+<li>Locate the <strong>Experiment ID</strong> from the output of the simulation. Example:<pre><code class="language-plaintext">experiment: 784f07a9-de53-43e7-a175-a99ccd18dec0
+</code></pre>
+</li>
+</ul>
+<p><strong>Output file of the experiment (InsetChat.json)</strong></p>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/InsetChat.png" alt="idmtools2"></p>
+<h4 id="122-open-analyzer_w1py"><strong>12.2 Open <code>analyzer_W1.py</code></strong>:</h4>
+<ul>
+<li>Use a text editor to open the script:</li>
+</ul>
+<h4 id="123-replace-the-experiment-id"><strong>12.3 Replace the Experiment ID</strong>:</h4>
+<ul>
+<li>Find the placeholder or old Experiment ID in the script.</li>
+<li>Replace it with the new Experiment ID you copied.</li>
+</ul>
+<h4 id="124-save-and-exit"><strong>12.4 Save and Exit</strong>:</h4>
+<ul>
+<li>Save your changes and exit the editor.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/analyzerW1.png" alt="analyzerW1"></p>
+<h3 id="step-13-once-the-experiment-id-is-updated-run-the-script">Step 13: Once the Experiment ID is updated, run the script:</h3>
+<pre><code class="language-python">python3 run analyzer_W1.py
+</code></pre>
+<h3 id="step-14-explanation-of-the-analysis-process"><strong>Step 14: Explanation of the Analysis Process</strong></h3>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/analyzeroutput.png" alt="analyzeroutput"></p>
+<h4 id="141-initializing-the-slurmplatform"><strong>14.1. Initializing the SlurmPlatform</strong></h4>
+<pre><code class="language-plaintext">Initializing SlurmPlatform with:
+{
+   &quot;mode&quot;: &quot;local&quot;,
+   &quot;job_directory&quot;: &quot;/projects/b1139/FE_wko2809/FE-2023-examples/experiments&quot;
+}
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The <code>SlurmPlatform</code> is initialized in <strong><code>mode: local</code></strong>.</li>
+<li>This means the analysis is being run on a single machine (e.g., the same node or local machine) using the specified directory <code>/projects/b1139/FE_wko2809/FE-2023-examples/experiments</code> to access experiment data.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="142-analyze-manager"><strong>14.2. Analyze Manager</strong></h4>
+<pre><code class="language-plaintext">Analyze Manager
+ | 1 item(s) selected for analysis
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The <code>Analyze Manager</code> has identified <strong>1 item</strong> (InsetChat.json) for analysis.</li>
+<li>This is the output file (InsetChat.json) generated from the earlier simulation.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="143-analysis-configuration"><strong>14.3. Analysis Configuration</strong></h4>
+<pre><code class="language-plaintext"> | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li><strong><code>partial_analyze_ok: True</code></strong>:<ul>
+<li>Allows the analysis to proceed even if all expected items aren’t present.</li>
+<li>This is useful for debugging or working with incomplete datasets.</li>
+</ul>
+</li>
+<li><strong><code>max_items: None</code></strong>:<ul>
+<li>There’s no limit on the number of items that can be analyzed.</li>
+</ul>
+</li>
+<li><strong><code>0 item(s) ignored</code></strong>:<ul>
+<li>All items selected for analysis are valid and included.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="144-analyzers-identified"><strong>14.4. Analyzer(s) Identified</strong></h4>
+<pre><code class="language-plaintext"> | Analyzer(s):
+ |  - SimpleInsetChartAnalyzer File parsing: on / Use cache: off
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The <code>Analyze Manager</code> uses a specific tool called <strong><code>SimpleInsetChartAnalyzer</code></strong>.</li>
+<li><strong><code>File parsing: on</code></strong>:<ul>
+<li>The analyzer parses data from the relevant files to extract useful insights.</li>
+</ul>
+</li>
+<li><strong><code>Use cache: off</code></strong>:<ul>
+<li>It doesn’t rely on cached results, ensuring fresh data processing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="145-pool-of-processes"><strong>14.5. Pool of Processes</strong></h4>
+<pre><code class="language-plaintext"> | Pool of 1 analyzing process(es)
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The analysis uses <strong>1 process</strong> to perform the task.</li>
+<li>This indicates the analysis is single-threaded, which is sufficient since only one item is being processed.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="146-file-parsing-progress"><strong>14.6. File Parsing Progress</strong></h4>
+<pre><code class="language-plaintext">100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00,  3.10it/s]
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The file parsing step completes successfully.</li>
+<li>Progress Bar:<ul>
+<li><strong><code>1/1</code></strong>: 1 file has been parsed (out of 1 total).</li>
+<li><strong><code>3.10 it/s</code></strong>: The parser processed the file at a speed of 3.10 items per second.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="147-running-analyzer-reduces"><strong>14.7. Running Analyzer Reduces</strong></h4>
+<pre><code class="language-plaintext">Running Analyzer Reduces: 100%|██████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00,  7.10it/s]
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The reduction step of the analysis runs successfully.</li>
+<li>This step processes the parsed data further.</li>
+<li><strong>Speed</strong>:<ul>
+<li><strong><code>7.10 it/s</code></strong>: The reduction phase processed the data at a speed of 7.10 items per second.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="148-analysis-completion"><strong>14.8. Analysis Completion</strong></h4>
+<pre><code class="language-plaintext"> | Analysis complete. Took 0 seconds (~ 0.477 per item)
+</code></pre>
+<ul>
+<li><strong>What Happened?</strong><ul>
+<li>The analysis is finished.</li>
+<li><strong>Time Taken</strong>:<ul>
+<li>The total time was <strong>0 seconds</strong>, as the task was extremely lightweight.</li>
+<li>On average, it took <strong>0.477 seconds per item</strong> to process.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-15-navigate-to-the-directory-to-view-all-files">Step 15: Navigate to the Directory to View All Files</h3>
+<p>To view all the output files generated by the simulation and analysis, navigate to the following directory:</p>
+<pre><code class="language-python">cd /projects/b1139/FE_wko2809/FE-2023-examples/experiments/my_outputs/example_basic/
+</code></pre>
+<h3 id="step-16-view-the-plots-to-assess-simulation-performance">Step 16: View the Plots to Assess Simulation Performance</h3>
+<h4 id="goal-the-goal-of-analyzing-climate-and-vector-mosquito-dynamics-is-to-understand-how-environmental-factors-and-vector-behaviors-influence-the-transmission-of-vector-borne-diseases-such-as-malaria">Goal: The goal of analyzing climate and vector (mosquito) dynamics is to understand how environmental factors and vector behaviors influence the transmission of vector-borne diseases, such as malaria.</h4>
+<p><strong>All Ages InsetChart Climate Vector</strong></p>
+<p><img src="https://raw.githubusercontent.com/mohamedsillahkanu/FE-2023-examples/main/All_Age_InsetChart_climate_vectors.png" alt="output1"></p>
+<h4 id="161-adult-vectors"><strong>16.1. Adult Vectors</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Number of adult vectors (mosquitoes).</li>
+<li><strong>X-axis</strong>: Time (days or simulation ticks).</li>
+<li><strong>Observation</strong>: <ul>
+<li>The values seem constant over time, indicating no significant change in the adult vector population.</li>
+</ul>
+</li>
+</ul>
+<h4 id="162-air-temperature"><strong>16.2. Air Temperature</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Air temperature (likely in °C).</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>The temperature remains consistent throughout the simulation, suggesting no variation in the climate model.</li>
+</ul>
+</li>
+</ul>
+<h4 id="163-daily-bites-per-human"><strong>16.3. Daily Bites per Human</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Number of bites per human per day.</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>This is constant, indicating a fixed biting rate of vectors on humans.</li>
+</ul>
+</li>
+</ul>
+<h4 id="164-daily-eir-entomological-inoculation-rate"><strong>16.4. Daily EIR (Entomological Inoculation Rate)</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Daily EIR, measuring the rate at which humans are exposed to infectious bites.</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>The EIR remains constant, implying stable transmission risk throughout the simulation.</li>
+</ul>
+</li>
+</ul>
+<h4 id="165-human-infectious-reservoir"><strong>16.5. Human Infectious Reservoir</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Proportion of infectious humans contributing to transmission.</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>A peak is observed early in the simulation, suggesting an initial surge in human infectiousness, which tapers off over time.</li>
+</ul>
+</li>
+</ul>
+<h4 id="166-infectious-vectors"><strong>16.6. Infectious Vectors</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Number of infectious vectors (mosquitoes).</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>This remains constant, showing a stable population of infectious vectors.</li>
+</ul>
+</li>
+</ul>
+<h4 id="167-rainfall"><strong>16.7. Rainfall</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Rainfall amount (likely in mm).</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>Rainfall remains steady, indicating no seasonal or climate-driven changes.</li>
+</ul>
+</li>
+</ul>
+<h4 id="168-relative-humidity"><strong>16.8. Relative Humidity</strong></h4>
+<ul>
+<li><strong>Y-axis</strong>: Relative humidity (fraction or percentage).</li>
+<li><strong>X-axis</strong>: Time.</li>
+<li><strong>Observation</strong>:<ul>
+<li>Relative humidity is constant, suggesting no environmental variability in this parameter.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="169-general-observations">16.9 <strong>General Observations</strong></h3>
+<ol>
+<li><p><strong>Consistency Across Parameters</strong>:</p>
+<ul>
+<li>Most parameters (temperature, rainfall, relative humidity, biting rate, and vector population) remain constant over time, implying the model is simulating a stable environment.</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Behavior</strong>:</p>
+<ul>
+<li>The only dynamic parameter is <strong>Human Infectious Reservoir</strong>, which shows an initial peak and then stabilizes. This might represent an outbreak or a short-term increase in infections that decline over time.</li>
+</ul>
+</li>
+</ol>
