@@ -112,3 +112,115 @@ print(fibonacci(6))  # Output: 8
 3. Write a **recursive function** to calculate the **sum of numbers from 1 to n**.
 4. Implement a **user-defined function** that finds the **maximum of three numbers**.
 
+
+
+---
+
+### **1. Filtering Data Based on a Condition**
+#### **Regular Function Approach**
+```python
+def filter_even_numbers(data):
+    return [num for num in data if num % 2 == 0]
+
+numbers = [10, 15, 20, 25, 30, 35, 40]
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: [10, 20, 30, 40]
+```
+#### **Lambda Function Approach**
+```python
+numbers = [10, 15, 20, 25, 30, 35, 40]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [10, 20, 30, 40]
+```
+---
+
+### **2. Transforming Data (Squaring Numbers)**
+#### **Regular Function Approach**
+```python
+def square_numbers(data):
+    return [num**2 for num in data]
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = square_numbers(numbers)
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+```
+#### **Lambda Function Approach**
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x**2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+```
+---
+
+### **3. Sorting a List of Dictionaries by a Key (e.g., Sorting Employees by Salary)**
+#### **Regular Function Approach**
+```python
+def sort_by_salary(employees):
+    return sorted(employees, key=lambda emp: emp["salary"])
+
+employees = [
+    {"name": "Alice", "salary": 50000},
+    {"name": "Bob", "salary": 70000},
+    {"name": "Charlie", "salary": 60000}
+]
+
+sorted_employees = sort_by_salary(employees)
+print(sorted_employees)
+```
+#### **Lambda Function Approach**
+```python
+employees = [
+    {"name": "Alice", "salary": 50000},
+    {"name": "Bob", "salary": 70000},
+    {"name": "Charlie", "salary": 60000}
+]
+
+sorted_employees = sorted(employees, key=lambda emp: emp["salary"])
+print(sorted_employees)
+```
+---
+
+### **4. Grouping Data Based on a Condition (Even and Odd Numbers)**
+#### **Regular Function Approach**
+```python
+def group_numbers(data):
+    even = [num for num in data if num % 2 == 0]
+    odd = [num for num in data if num % 2 != 0]
+    return {"even": even, "odd": odd}
+
+numbers = [10, 15, 20, 25, 30, 35, 40]
+grouped_numbers = group_numbers(numbers)
+print(grouped_numbers)
+```
+#### **Lambda Function Approach**
+```python
+numbers = [10, 15, 20, 25, 30, 35, 40]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+odd_numbers = list(filter(lambda x: x % 2 != 0, numbers))
+
+grouped_numbers = {"even": even_numbers, "odd": odd_numbers}
+print(grouped_numbers)
+```
+---
+
+### **5. Summing Values in a List (Aggregation)**
+#### **Regular Function Approach**
+```python
+def sum_numbers(data):
+    return sum(data)
+
+numbers = [10, 20, 30, 40, 50]
+total_sum = sum_numbers(numbers)
+print(total_sum)  # Output: 150
+```
+#### **Lambda Function Approach**
+```python
+from functools import reduce
+
+numbers = [10, 20, 30, 40, 50]
+total_sum = reduce(lambda x, y: x + y, numbers)
+print(total_sum)  # Output: 150
+```
+---
+
+
